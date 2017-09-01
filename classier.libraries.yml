@@ -1,0 +1,9 @@
+global-styling:
+  css:
+    theme:
+      css/style.css: {}
+      css/modules/bylines.css: {}
+  js:
+    js/backgroud.js: {}
+    js/menu.js: {}
+    

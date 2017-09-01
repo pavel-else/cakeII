@@ -1,0 +1,19 @@
+{
+  "name": "classier",
+  "version": "1.0.0",
+  "description": "A Drupal 8 theme for teaching.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "susy": "^3.0.1"
+  }
+}

@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|PT+Serif:400,400i,700&subset=cyrillic');
+
+// font-family: Open Sans;
+// font-family: PT Serif;
+
+@import 'susy';
+
+//=====================================
+//=grid
+//=====================================
+$susy: (
+	'columns': susy-repeat(12),
+	'gutters': 0.429,
+	'spread': 'narrow',
+	'container-spread': 'narrow',
+);
+//=====================================
+//=End of grid
+//=====================================
+
+
+
+//=====================================
+//=variables
+//=====================================
+$color_style: #fcd736;
+$color_link: $color_style;
+$color_button: $color_style;
+$color_accent: $color_style;
+$color-alt: #36befc;
+$color_text: #000;
+$color_title: $color_text;
+$color_bg: #efefef;
+$color-bg-alt: lighten($color-alt, 33%);
+
+$font-text: PT Serif;
+$font-title: Open Sans;
+//=====================================
+//=End of variables
+//=====================================
+
+
+
+//=====================================
+//=mixins
+//=====================================
+
+// use for columns container
+@mixin row {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	position: relative;
+	@content;
+}
+
+// use for column, example @include col(( desktop: 23.5%, mtl: 32%, mtp: 32%, msl: 48%, msp: 100%)); 
+@mixin col($options: ()){
+	@if (if(map-get($options, desktop), 1, 0) == 1) {
+		@media screen and (min-width: 1180px) {         
+			$col-width: map-get($options, desktop);
+			$cols-count: floor(100% / $col-width);
+
+			width: $col-width;
+			margin-right: (100% - ($col-width * $cols-count)) / ($cols-count - 1);
+			&:nth-child(#{$cols-count}n) {
+				margin-right: 0;
+			}
+		}
+	}
+	@if (if(map-get($options, mtl), 1, 0) == 1) {
+		@media screen and (min-width: 980px) and (max-width: 1179px) {          
+			$col-width: map-get($options, mtl);
+			$cols-count: floor(100% / $col-width);
+
+			width: $col-width;
+			margin-right: (100% - ($col-width * $cols-count)) / ($cols-count - 1);
+			&:nth-child(#{$cols-count}n) {
+				margin-right: 0;
+			}
+		}
+	}
+	@if (if(map-get($options, mtp), 1, 0) == 1) {
+		@media screen and (min-width: 768px) and (max-width: 979px) {           
+			$col-width: map-get($options, mtp);
+			$cols-count: floor(100% / $col-width);
+
+			width: $col-width;
+			margin-right: (100% - ($col-width * $cols-count)) / ($cols-count - 1);
+			&:nth-child(#{$cols-count}n) {
+				margin-right: 0;
+			}
+		}
+	}
+	@if (if(map-get($options, msl), 1, 0) == 1) {
+		@media screen and (min-width: 480px) and (max-width: 767px) {           
+			$col-width: map-get($options, msl);
+			$cols-count: floor(100% / $col-width);
+
+			width: $col-width;
+			margin-right: (100% - ($col-width * $cols-count)) / ($cols-count - 1);
+			&:nth-child(#{$cols-count}n) {
+				margin-right: 0;
+			}
+		}
+	}
+	@if (if(map-get($options, msp), 1, 0) == 1) {
+		@media screen and (min-width: 1px) and (max-width: 479px) {         
+			$col-width: map-get($options, msp);
+			$cols-count: floor(100% / $col-width);
+
+			width: $col-width;
+			margin-right: (100% - ($col-width * $cols-count)) / ($cols-count - 1);
+			&:nth-child(#{$cols-count}n) {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+// Mixin for responsibility. Example of use:
+//
+// @include media(mtl) {};
+// @include media(mtp) {};
+// @include media(msl) {};
+// @include media(msp) {};
+// 
+@mixin media($break-point) {
+	$mtl: "(max-width: 1199px)";
+	$mtp: "(max-width: 979px)";
+	$msl: "(max-width: 767px)";
+	$msp: "(max-width: 479px)";
+	@if $break-point == mtl {
+		@media #{$mtl} { @content; }
+	}
+	@if $break-point == mtp {
+		@media #{$mtp} { @content; }
+	}
+	@if $break-point == msl {
+		@media #{$msl} { @content; }
+	}
+	@if $break-point == msp {
+		@media #{$msp} { @content; }
+	}
+}
+
+// use for many icons in one element like a solials icons
+@mixin icon-base($side,$margin) {
+	width: $side;
+	height: $side;
+	background-image: url(../images/ico.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	@content;
+}
+
+// single icon (use icon-base inside)
+@mixin icon($side,$margin,$url,$alignment) {
+	position: relative;
+	box-sizing: border-box;
+	padding-left: $side + $margin;
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		@if $alignment == center {
+			top: 50%;
+			transform: translateY(-50%);
+		} else {
+			top: 0;
+		}
+		@include icon-base($side, $margin) {
+			background-image: url(#{$url});
+		}
+	}
+}
+
+// Make a background darker
+@mixin darker($color: hsla(0, 0%, 0%,0.7)) {
+	position: relative;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $color;
+		z-index: 1;
+		// opacity: $opacity;
+		@content;
+	}
+	&>div {
+		position: relative;
+		z-index: 2;
+	}
+}
+//=====================================
+//=End of mixins
+//=====================================
+
+
+
+//=====================================
+//=placeholder selector
+//=====================================
+%layout {
+	max-width: 1170px;
+	margin-right: auto;
+	margin-left: auto;
+	@include media(mtl) {
+		padding-right: 20px;
+		padding-left: 20px;
+	};
+	@include media(msl) {
+		padding-right: 10px;
+		padding-left: 10px;
+	};
+}
+%button {
+	font-family: $font-title;
+	display: inline-block;
+	background-color: $color_style;
+	background-image: linear-gradient(185deg, $color-style 0%, darken($color-style,10%) 100%);
+	padding: 15px 40px;
+	line-height: 1;
+	font-weight: 800;
+	white-space: nowrap;
+	text-decoration: none;
+	color: #000;
+	border-radius: 3px;
+	border-bottom: 3px solid darken($color-style,15%);
+	transition: all 0.2s ease 0s;
+	&:hover {
+		text-decoration: none;
+		// background-image: linear-gradient(185deg, darken($color-style,12%) 0%, darken($color-style,12%) 100%);
+	    box-shadow: 0 10px 60px -10px #232323;
+		// transform: translateY(-5px);
+		// border-bottom-width: 0;
+	}
+}
+//=====================================
+//=End of placeholder selector
+//=====================================
+
+
+
+
+
+
+
+

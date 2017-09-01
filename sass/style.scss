@@ -1,0 +1,325 @@
+@import "vars";
+
+
+/**
+ *
+ * TABLE OF CONTENT
+ *
+ * basis
+ * general
+ * social
+ * header
+ * menu
+ * branding
+ * front
+ * advantages
+ * textblock
+ * blog
+ * news
+ * about
+ * catalog
+ * reviews
+ * gallery
+ * contacts
+ * footer
+ * 
+ */
+
+
+//=====================================
+//=basis
+//=====================================
+html,body {
+    min-height: 100%;
+}
+body {
+    margin: 0;
+    color: $color_text;
+    font-family: $font-text;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+h1,h2,h3,h4,h5,h6,p,ol,ul,li,figure {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+//=====================================
+//=End of basis
+//=====================================
+
+
+
+//=====================================
+//=general
+//=====================================
+h1,h2,h3,h4,h5,h6 /* titles */ {
+    // color: $color_title;
+    font-family: $font-title;
+    font-weight: 800;
+    line-height: 1.4;
+}
+h1 {
+    font-size: 40px;
+
+    @include media(msp) {
+        font-size: 22px;
+    };
+    @include media(msl) {
+        font-size: 26px;
+    };
+    @include media(mtp) {
+        font-size: 30px;
+    };
+    @include media(mtl) {
+        font-size: 34px;
+    };
+}
+h2 {
+    font-size: 34px;
+
+    @include media(msp) {
+        font-size: 22px;
+    };
+    @include media(msl) {
+        font-size: 26px;
+    };
+    @include media(mtp) {
+        font-size: 30px;
+    };
+    @include media(mtl) {
+        font-size: 34px;
+    };
+}
+a {
+    display: inline-block;
+    color: $color_link;
+
+    text-decoration-color: lighten($color_link, 20%);
+    &:hover {
+        text-decoration: none;
+    }
+}
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.no-sidebars {
+    .region-content {
+        .block-content {
+            @extend %layout;
+        }
+    }
+}
+.region-content {
+    .block {
+        padding: 40px 0 70px;
+        &:nth-child(even) {
+            background-color: $color_bg;
+        }
+        @at-root .user-logged-in & {
+            position: relative;
+        }
+    }
+}
+#main-content {
+    display: none;
+}
+//=====================================
+//=End of general
+//=====================================
+
+
+
+//=====================================
+//=social
+//=====================================
+.paragraph--type--social /* social icons */ {
+    .paragraphs--inner {
+        display: flex;
+    }
+    .field--type-link {
+        margin-right: 5px;
+        a {
+            display: block;
+            width: 30px;
+            height: 30px;
+            color: transparent;
+            background-image: url(../images/bg/icon.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            background-color: #ccc;
+            border: 1px solid #232323;
+            box-sizing: border-box;
+            font-size: 0;
+        }
+    }
+}
+.field--name-field-facebook a {
+    background-image: url(../images/social/i-fb.com);
+}
+.field--name-field-twitter a {
+    background-image: url(../images/social/i-tw.com);
+}
+.field--name-field-vk a {
+    background-image: url(../images/social/i-vk.com);
+}
+.field--name-field-instagram a {
+    background-image: url(../images/social/i-ints.com);
+}
+.field--name-field-odnoklassniki a {
+    background-image: url(../images/social/i-ok.com);
+}
+//=====================================
+//=End of social
+//=====================================
+
+
+
+//=====================================
+//=header
+//=====================================
+#block-7 .contact::before {
+    content: 'HELLO WORLD!';
+    text-align: center;
+    font-size: 40px;
+    color: black;
+}
+//=====================================
+//=End of header
+//=====================================
+
+
+
+//=====================================
+//=menu
+//=====================================
+
+//=====================================
+//=End of menu
+//=====================================
+
+
+
+//=====================================
+//=branding
+//=====================================
+
+//=====================================
+//=End of branding
+//=====================================
+
+
+
+//=====================================
+//=front
+//=====================================
+
+//=====================================
+//=End of front
+//=====================================
+
+
+
+//=====================================
+//=advantages
+//=====================================
+
+//=====================================
+//=End of advantages
+//=====================================
+
+
+
+//=====================================
+//=textblock
+//=====================================
+
+//=====================================
+//=End of textblock
+//=====================================
+
+
+
+//=====================================
+//=blog
+//=====================================
+
+//=====================================
+//=End of blog
+//=====================================
+
+
+
+//=====================================
+//=news
+//=====================================
+
+//=====================================
+//=End of news
+//=====================================
+
+
+
+//=====================================
+//=about
+//=====================================
+
+//=====================================
+//=End of about
+//=====================================
+
+
+
+//=====================================
+//=catalog
+//=====================================
+
+//=====================================
+//=End of catalog
+//=====================================
+
+
+
+//=====================================
+//=reviews
+//=====================================
+
+//=====================================
+//=End of reviews
+//=====================================
+
+
+
+//=====================================
+//=gallery
+//=====================================
+
+//=====================================
+//=End of gallery
+//=====================================
+
+
+
+//=====================================
+//=contacts
+//=====================================
+
+//=====================================
+//=End of contacts
+//=====================================
+
+
+
+//=====================================
+//=footer
+//=====================================
+
+//=====================================
+//=End of footer
+//=====================================
