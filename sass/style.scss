@@ -217,10 +217,49 @@ header {
         -o-flex-direction: column;
         flex-direction: column;
     }
-}
-#block-7 { 
+} 
+#block-7 {
     order: 2;
     margin-bottom: 80px;
+    .contact {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        align-items: center;
+    }
+    .telephone {
+        display: flex;
+        align-items: center;
+        margin: 0;
+        margin-right: 50px;
+        &::before {
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px; 
+            content: "";
+            background-image: url('../images/telephone.png');
+            background-size: 100%;
+            background-position: 0 0; 
+        }
+    }    
+    .e-mail {
+        display: flex;
+        align-items: center;
+        margin-right: 50px;
+        &::before {
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-right: 10px; 
+            content: "";
+            background-image: url('../images/telephone.png');
+            background-size: 100%;
+            background-position: 0 0; 
+        }
+    }
 }
 
 #block-9 {
@@ -231,14 +270,28 @@ header {
         font-size: 60px;
         font-weight: bold;
     }
-    .site-slogan {
-        display: none;
-    }
-    .h-group::after {
+    .site-name::after {
         display: block;
         width: 650px;
         margin-bottom: 50px;
+        padding-top: 20px;
         content:'Пул лояльных изданий, анализируя результаты рекламной кампании, концентрирует эмпирический инвестиционный продукт. Бренд спонтанно притягивает комплексный анализ рыночных цен. Привлечение аудитории стремительно отталкивает креативный conversion ';
+        font-size: 20px;
+
+    }
+    .h-group::after {
+        display: block;
+        width: 320px;
+        margin-bottom: 90px;
+        padding: 20px 50px;
+        content: 'запросить прайс';
+        text-transform: uppercase;
+        text-align: center;
+        background-color: #dc3e38;
+        border-radius: 7px;
+    }
+    .site-slogan {
+        display: none;
     }
     .logo--black,
     .logo--white {
@@ -249,12 +302,14 @@ header {
 #block-classier-horizontalmenu {
     order: 1;
     .horizontal-menu {
+        margin-bottom: 50px;
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
         display: -o-flex;
         display: flex;
         justify-content: flex-end;
+        align-items: center;
         &::before {
             content: 'Вкусный Кондитер';
             margin: 0 auto 0 0;
