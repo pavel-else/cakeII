@@ -228,7 +228,7 @@ $font-title: Open Sans;
 %button {
 	font-family: $font-title;
 	display: inline-block;
-	background-color: $color_style;
+	background-color: #dc3e38;
 	background-image: linear-gradient(185deg, $color-style 0%, darken($color-style,10%) 100%);
 	padding: 15px 40px;
 	line-height: 1;
