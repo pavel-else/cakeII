@@ -194,7 +194,7 @@ $font-title: Open Sans;
 		bottom: 0;
 		left: 0;
 		background-color: $color;
-		z-index: 1;
+		z-index: 2;
 		// opacity: $opacity;
 		@content;
 	}
