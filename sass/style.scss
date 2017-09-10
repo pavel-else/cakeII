@@ -456,9 +456,25 @@ header {
     }
     .views-row {
         @include col(( desktop: 32%, mtl: 32%, mtp: 32%, msl: 48%, msp: 100%));
-        background-color: white;
-    }  
-}
+        margin-bottom: 10px;
+        background-color: white; 
+        img {
+            width: 374px; 
+        }
+    }
+    .more-link a {
+        display: block;
+        width: 320px;
+        margin: 50px auto 100px;
+        padding: 20px 0px;
+        background-color: #dc3e38;
+        background-image: none;
+        border-radius: 7px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+} 
 //=====================================
 //=End of blog
 //=====================================
