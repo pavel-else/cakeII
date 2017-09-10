@@ -423,7 +423,48 @@ header {
 //=====================================
 //=advantages
 //=====================================
+#block-3 {
+    background-image: url(../images/pexels-photo-132694.jpg);
+    /* color: white; */
+    h2 {
+        font-family: Roboto slab;
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .field--name-body p {
+        font-size: 18px;
+        text-align: center;
+    }
+    .field--type-field-collection {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+    }
+    .field-collection-item:before {
+        display: block;
+        width: 142px;
+        height: 142px;
+        background-color: black;
+    }
+    .field--name-field-zagolovok{
+        font-family: roboto slab;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 28px;
+    }
+    .field--name-field-opisanie {
+        font-size: 16px;
+        font-weight: 200;
+    }
+    .field--name-field-piktogramma,
+    .field--name-field-izobrazenie {
+        display: none;
+    }
 
+}
 //=====================================
 //=End of advantages
 //=====================================
