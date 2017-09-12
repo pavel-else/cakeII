@@ -1,5 +1,22 @@
 ﻿@import "vars";
-
+//=====================================
+//=display none
+//=====================================
+/* header,
+#block-classier-views-block-katalog-block-1-2,
+#block-10,
+#block-views-block-blog,
+#block-3,
+#block-views-block-blagodarnosti-block-1,
+#block-views-block-otzyvy-block-1,
+#block-classier-form, 
+//footer 
+{
+    display: none;
+} */
+//=====================================
+//=End of display none
+//=====================================
 
 /**
  *
@@ -133,7 +150,19 @@ img {
 //=====================================
 //=End of general
 //=====================================
-
+.more-link a {
+    display: block;
+    width: 320px;
+    margin: 50px auto 100px;
+    padding: 20px 0px;
+    background-color: #dc3e38;
+    background-image: none;
+    border-radius: 7px;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
 
 
 //=====================================
@@ -183,7 +212,8 @@ img {
 //align center
 #block-7 .block-content,
 #block-classier-horizontalmenu .block-content,
-#block-9 .block-content {
+#block-9 .block-content,
+.region-footer  {
     width: 1140px;
     margin: 0 auto;
 }
@@ -611,7 +641,46 @@ header {
 //=====================================
 //=reviews
 //=====================================
-
+#block-views-block-otzyvy-block-1 {
+    background-image: url(../images/pexels-photo-96431.png);
+    background-size: cover;
+    h2 {
+        font-family: Roboto slab;
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+        color: white;
+    }
+    .view-content {
+        @include row;
+    }
+    .views-row {
+        @include col(( desktop: 32%, mtl: 32%, mtp: 32%, msl: 48%, msp: 100%));
+        padding-top: 45px;
+        padding-bottom: 45px;
+        background-color: white;
+    }
+    .views-field-field-img img {
+        width: 170px;
+        height: 170px; 
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    .views-field-title {
+        padding: 35px 50px 0;
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+    }
+    .views-field-field-post {
+        font-size: 12px;
+        text-align: center;
+    }
+    .views-field-body {
+        padding: 35px 50px 0;
+        line-height: 22px;
+    }
+}
 //=====================================
 //=End of reviews
 //=====================================
@@ -631,17 +700,131 @@ header {
 //=====================================
 //=contacts
 //=====================================
-
+#block-classier-form {
+    margin-top: 60px;
+    .block-content {
+        position: relative;
+        width: 770px;
+        border: 1px solid lightgray;
+    }
+    h2 {
+        margin-left: 50px;
+        margin-top: 50px;
+        font-family: Roboto slab;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .form-text {
+        width: 300px;
+        margin-left: 50px;
+        border: none;
+        border-bottom: 1px solid lightgray;
+    }
+    textarea {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        padding: 5px;
+        top: 50px;
+        left: 400px;
+        border: none;
+        border-left: 1px solid lightgray;
+    }
+    .button {
+        display: block;
+        width: 320px;
+        margin: 50px auto 30px;
+        padding: 20px 0px;
+        background-color: #dc3e38;
+        background-image: none;
+        border-radius: 7px;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+}
 //=====================================
 //=End of contacts
 //=====================================
 
-
-
 //=====================================
 //=footer
 //=====================================
+.region-footer {
+    background-color: lightgray;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    -o-flex-wrap: wrap;
+    flex-wrap: wrap;
 
+    h2 {
+        display: none;
+    }
+}
+#block-4 {
+    width: 350px;
+}
+#block-5 {
+    margin-right: 0;
+    .field--type-text-with-summary {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+    }
+    .adres {
+        display: none;
+    }
+}
+#block-12 {
+}
+#block-6 {
+    width: 100%;
+    padding-top: 150px;
+}
 //=====================================
 //=End of footer
 //=====================================
+
+//=====================================
+//=x3
+//=====================================
+#block-views-block-blagodarnosti-block-1 {
+    h2 {
+        font-family: Roboto slab;
+        font-size: 40px;
+        font-weight: 400;
+        text-align: center;
+    }
+    .view-content {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+    }
+    .views-row {
+        margin-right: 32px;
+        &:last-child {
+            margin-right: 0;
+        }
+    } 
+}
+//=====================================
+//=End of x3
+//=====================================
+

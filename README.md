@@ -21,5 +21,9 @@ time-tracker
 05.09.2017 - 2.5h - хедер, часть каталога
 06.09.2017 - 2h - каталог
 09.09.2017 - 1.5h - блог
+12.09.2017 - 3h - до футера
+
+TOTAL: 11h
 
 
+гуглодока https://docs.google.com/document/d/1AeOxcD-9OXCF6xk5OHZf93Gssb4mBvj4VeayoHgvM8k/edit?usp=sharing
