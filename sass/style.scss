@@ -2,7 +2,7 @@
 //=====================================
 //=display none
 //=====================================
-/* header,
+/*  header,
 #block-classier-views-block-katalog-block-1-2,
 #block-10,
 #block-views-block-blog,
@@ -12,8 +12,8 @@
 #block-classier-form, 
 //footer 
 {
-    display: none;
-} */
+   display: none;
+}  */
 //=====================================
 //=End of display none
 //=====================================
@@ -751,40 +751,52 @@ header {
 //=====================================
 //=footer
 //=====================================
+footer {
+    background-color: gray;
+    background-image: url(../images/cookie-1832169-1920.png);
+    background-size: cover;
+    color: white;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    table {
+        width: 100%;
+        .rteright {
+            text-align: right;
+        }
+    }
+}
 .region-footer {
-    background-color: lightgray;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    -webkit-flex-wrap: wrap;
-    -moz-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    -o-flex-wrap: wrap;
     flex-wrap: wrap;
-
+    padding-top: 40px;
+    padding-bottom: 40px;
     h2 {
         display: none;
     }
 }
 #block-4 {
+    position: absolute;
     width: 350px;
+    font-size: 12px;
+    &:before {
+        content: 'Вкусный кондитер';
+        font-family: OlgaCTT;
+        font-size: 44px;
+    }
+
 }
 #block-5 {
-    margin-right: 0;
+    margin-left: 600px;
+    margin-right: 15px;
     .field--type-text-with-summary {
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: -o-flex;
         display: flex;
-        -webkit-flex-direction: row;
-        -moz-flex-direction: row;
-        -ms-flex-direction: row;
-        -o-flex-direction: row;
         flex-direction: row;
+    }
+    .telefon {
+        margin-right: 15px;;
     }
     .adres {
         display: none;
@@ -823,6 +835,9 @@ header {
             margin-right: 0;
         }
     } 
+}
+#block-classier-content {
+    display: none;
 }
 //=====================================
 //=End of x3
